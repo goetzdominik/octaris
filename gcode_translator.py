@@ -11,7 +11,7 @@ def headerFindDigit(line):
 
 def main():
     #open the existing g-code file
-    file = open("gcode.txt", "r")
+    file = open("sph.txt", "r")
     content = file.readlines() # gcode as a list where each element is a line
     coordinate_type = 0 if 'G90' in content[0] else 1
     if coordinate_type == 0: print('You are currently in G90 ABSOLUTE mode.')

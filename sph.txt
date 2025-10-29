@@ -1,0 +1,74 @@
+
+
+; Use absolute positioning
+G90
+
+; Move to bottom-left corner (home position)
+G1 X0 Y0 B0 F300
+
+; Set Z height for traveling (motor A controls Z)
+G1 A20 F300
+
+; Move to center of bed
+G1 X45 Y27 F300 ; NO E
+
+; Set Z height for drawing
+G1 A6 F300 ; NO E
+
+; Switch to relative positioning for drawing the letter
+G91
+
+; Draw upper curve of S (relative moves)
+G1 B0.3 F300 ; NO E
+G1 X5 F300
+G1 Y5  F300
+G1 X-5  F300
+G1 Y5 F300
+G1 X5  F300
+
+;stop extrusion
+G1 B-0.9 F300
+
+
+;Travel to new letter
+G1 X-10 F300 ; NO E
+
+; Start P
+G1 B0.9 F300 ; NO E
+G1 Y-10  F300
+G1 X-5 F300
+G1 Y5 F300
+G1 X5  F300
+
+
+;retract
+G1 B-0.9 F300 ; NO E
+
+;travel to new letter 
+
+G1 X-10 Y-5 F300 ; NO E
+
+; start H 
+G1 B0.9 F300 ; NO E
+G1 Y5 F300
+G1 Y5  F300
+G1 Y-5  F300
+G1 X-5  F300
+G1 Y-5  F300
+G1 Y5  F300
+G1 Y5  F300
+G1 B-1 F300
+
+; Switch back to absolute positioning
+G90 ; NO E
+G92 B0  ; NO E
+
+; Lift Z
+G1 A20 F300 ; NO E
+
+; Return to bottom left corner
+G1 X0 Y0 F300 ; NO E
+
+; Disable motors
+M84
+
